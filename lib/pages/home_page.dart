@@ -1,3 +1,5 @@
+import 'package:ecommerce/controllers/category_controller.dart';
+import 'package:ecommerce/model/category_item.dart';
 import 'package:ecommerce/widgets/home_page_widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -10,8 +12,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+
+
   @override
   Widget build(BuildContext context) {
+
     Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
       drawer: const HomePageDrawer(),
@@ -45,8 +51,14 @@ class _HomePageState extends State<HomePage> {
       ),
       body: SafeArea(
         child: Column(
-          children: const [
-            HomePageCarouselWidget(),
+          children: [
+            const HomePageCarouselWidget(),
+            const SizedBox(height: 10,),
+            SizedBox(
+              height: screenSize.height * 0.2,
+              width: screenSize.width,
+              child: CategoryWidget(screenSize.height*0.2)
+            )
           ],
         ),
       ),
