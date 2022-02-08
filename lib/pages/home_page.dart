@@ -45,27 +45,28 @@ class _HomePageState extends State<HomePage> {
       ),
       body: SafeArea(
         child: Column(
-          children:  [
-
+          children: const [
+            HomePageCarouselWidget(),
           ],
         ),
       ),
     );
   }
 
-
-
-  Builder _builder(BuildContext context)
-  {
+  Builder _builder(BuildContext context) {
     return Builder(
-        builder: (context){
-          return IconButton(
-              onPressed: (){
-                Scaffold.of(context).openDrawer();
-              },
-            icon: const Icon(Icons.menu_rounded,size: 36,color: Colors.white,),
-          );
-        },
+      builder: (context) {
+        return IconButton(
+          onPressed: () {
+            Scaffold.of(context).openDrawer();
+          },
+          icon: const Icon(
+            Icons.menu_rounded,
+            size: 36,
+            color: Colors.white,
+          ),
+        );
+      },
     );
   }
 }

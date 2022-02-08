@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:core';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class HomePageDrawer extends StatelessWidget {
   const HomePageDrawer({Key? key}) : super(key: key);
@@ -94,3 +95,43 @@ class HomePageDrawer extends StatelessWidget {
     ));
   }
 }
+
+
+
+
+class HomePageCarouselWidget extends StatefulWidget {
+  const HomePageCarouselWidget({Key? key}) : super(key: key);
+
+  @override
+  _HomePageCarouselWidgetState createState() => _HomePageCarouselWidgetState();
+}
+
+class _HomePageCarouselWidgetState extends State<HomePageCarouselWidget> {
+  List<String> imgList = [
+    "images/c1.jpg",
+    "images/m1.jpeg",
+    "images/w1.jpeg",
+  ];
+  @override
+  Widget build(BuildContext context) {
+    var screenSize = MediaQuery.of(context).size;
+    return SizedBox(
+      height: screenSize.height * 0.3,
+      width: screenSize.width,
+      child: CarouselSlider(
+        items: imgList.map((e) => Stack(
+          children: [
+            Image(image: AssetImage(e.toString()),width: screenSize.width,height: screenSize.height * 0.3,fit: BoxFit.cover,),
+          ],
+        )).toList(),
+        options: CarouselOptions(
+            autoPlay: true,
+            autoPlayAnimationDuration: const Duration(milliseconds: 400),
+            height: double.infinity,
+            viewportFraction: 1,
+        ),
+      ),
+    );
+  }
+}
+
