@@ -55,9 +55,16 @@ class _HomePageState extends State<HomePage> {
             const HomePageCarouselWidget(),
             const SizedBox(height: 10,),
             SizedBox(
-              height: screenSize.height * 0.2,
+              height: screenSize.height * 0.18,
               width: screenSize.width,
-              child: CategoryWidget(screenSize.height*0.2)
+              child: CategoryWidget(screenSize.height*0.18)
+            ),
+
+            // Recent Product's List
+            SizedBox(
+              width: screenSize.width,
+              height: screenSize.height - (screenSize.height*0.18 + screenSize.height * 0.25+90),
+              child: RecentProducts(screenSize.height - (screenSize.height*0.18 + screenSize.height * 0.25+90)),
             )
           ],
         ),
