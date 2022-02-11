@@ -6,5 +6,6 @@ class ProductMode
   double? prevPrice;
   double? currentPrice;
   String? imgUrl;
-  ProductMode(this.name,this.prevPrice,this.currentPrice,this.imgUrl);
+  String? details;
+  ProductMode(this.name,this.prevPrice,this.currentPrice,this.imgUrl,this.details);
 }

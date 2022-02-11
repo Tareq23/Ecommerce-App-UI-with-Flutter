@@ -1,6 +1,7 @@
 import 'package:ecommerce/controllers/category_controller.dart';
 import 'package:ecommerce/controllers/product_controller.dart';
 import 'package:ecommerce/model/category_item.dart';
+import 'package:ecommerce/pages/product_details.dart';
 import 'package:flutter/material.dart';
 import 'dart:core';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -343,7 +344,9 @@ class RecentProducts extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.all(8),
                               child: InkWell(
-                                  onTap: (){},
+                                  onTap: (){
+                                    Navigator.push(context, MaterialPageRoute(builder: (context) => ProductDetails(index)));
+                                  },
                                   child: Text(productList[index].name.toString(),
                                     style: const TextStyle(color: Colors.black87,fontSize: 18,fontWeight: FontWeight.w500),
                                   )
