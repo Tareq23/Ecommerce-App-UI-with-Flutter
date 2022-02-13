@@ -1,6 +1,7 @@
 import 'package:ecommerce/controllers/category_controller.dart';
 import 'package:ecommerce/controllers/product_controller.dart';
 import 'package:ecommerce/model/category_item.dart';
+import 'package:ecommerce/pages/cart_page.dart';
 import 'package:ecommerce/pages/product_details.dart';
 import 'package:flutter/material.dart';
 import 'dart:core';
@@ -105,6 +106,24 @@ class HomePageDrawer extends StatelessWidget {
                 ),
                 leading: Icon(
                   Icons.shopping_bag_sharp,
+                  color: Colors.red,
+                ),
+              ),
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>  CartPage()));
+              },
+              child: const ListTile(
+                title: Text(
+                  'Shopping Cart',
+                  style: TextStyle(
+                      color: Colors.black87,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500),
+                ),
+                leading: Icon(
+                  Icons.shopping_cart,
                   color: Colors.red,
                 ),
               ),

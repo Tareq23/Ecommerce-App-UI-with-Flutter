@@ -1,5 +1,6 @@
 import 'package:ecommerce/controllers/category_controller.dart';
 import 'package:ecommerce/model/category_item.dart';
+import 'package:ecommerce/pages/cart_page.dart';
 import 'package:ecommerce/widgets/home_page_widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -41,7 +42,9 @@ class _HomePageState extends State<HomePage> {
             width: 10,
           ),
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => CartPage()));
+              },
               icon: const Icon(
                 Icons.shopping_cart,
                 size: 30,

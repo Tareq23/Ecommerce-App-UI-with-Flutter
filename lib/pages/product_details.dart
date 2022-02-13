@@ -1,4 +1,5 @@
 import 'package:ecommerce/controllers/product_controller.dart';
+import 'package:ecommerce/pages/cart_page.dart';
 import 'package:flutter/material.dart';
 
 class ProductDetails extends StatelessWidget {
@@ -38,7 +39,9 @@ class ProductDetails extends StatelessWidget {
               width: 10,
             ),
             IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>  CartPage()));
+                },
                 icon: const Icon(
                   Icons.shopping_cart,
                   size: 30,
